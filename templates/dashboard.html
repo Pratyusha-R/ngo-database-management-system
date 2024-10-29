@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Unity for Change - Dashboard</title>
+    <style>
+        /* Inline CSS for background image */
+        body {
+            background-image: url("{{ url_for('static', filename='css/images/dashboard_bg.jpg') }}"); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        h1, h2 {
+            color: #ffc107;
+        }
+        .nav-item {
+            padding: 5px 10px;
+            text-align: center;
+        }
+        .nav-link {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ffc107;
+        }
+        /* Button Styling */
+        .btn-custom {
+            background-color: #ffc107;
+            color: black;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ffca2c;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Unity for Change</a>
+    </nav>
+    <div class="container mt-5 text-center">
+        <h1>Dashboard</h1>
+        <p><p>Empower change, track progress, and connect with our community! As an admin of Unity for Change, you have the tools to manage donations, engage volunteers, oversee projects, and drive our mission forward. Together, let’s create a brighter, united future!</p>    </p>
+        
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <a href="/donors" class="btn btn-custom">Donors</a>
+            </div>
+            <div class="col-md-3">
+                <a href="/volunteers" class="btn btn-custom">Volunteers</a>
+            </div>
+            <div class="col-md-3">
+                <a href="/projects" class="btn btn-custom">Projects</a>
+            </div>
+            <div class="col-md-3">
+                <a href="/donations" class="btn btn-custom">Donations</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
