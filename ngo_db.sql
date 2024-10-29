@@ -1,0 +1,36 @@
+CREATE DATABASE ngo_db;
+
+USE ngo_db;
+
+CREATE TABLE donors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    address VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE volunteers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    address VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE projects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    budget DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE donations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    donor_id INT NOT NULL,
+    project_id INT NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (donor_id) REFERENCES donors(id) ON DELETE CASCADE,
+    FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
+);
+
